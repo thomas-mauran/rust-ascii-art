@@ -1,0 +1,13 @@
+name: clap-yaml
+version: "1.0"
+author: Zrzka
+about: Stackoverflow sample
+args:
+- lang:
+    short: l
+    long: lang
+    default_value: cz
+    takes_value: true
+    possible_values:
+    - cz
+    - en
