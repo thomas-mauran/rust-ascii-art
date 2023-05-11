@@ -1,7 +1,7 @@
 mod commands;
 
 use commands::{CliArgs, EntityType};
-use commands::text::{TextSubcommand, HelloCommand};
+use commands::text::{TextSubcommand};
 use commands::shapes::ShapeSubcommand;
 use clap::Parser;
 
@@ -13,7 +13,7 @@ fn main() {
             ShapeSubcommand::Square(_) => create_square()
         },
         EntityType::Text(text_command) => match text_command.command{
-            TextSubcommand::Hello(text_command) => say_hello(&text_command)
+            TextSubcommand::Hello(text_command) => text_command.say_hello()
         },
     }
 
@@ -21,8 +21,4 @@ fn main() {
 
 fn create_square() {
     println!("Creating a square...");
-}
-
-fn say_hello(hello_command: &HelloCommand){
-    println!("Hello, {}!", hello_command.name)
 }

@@ -21,3 +21,10 @@ pub enum TextSubcommand{
 pub struct HelloCommand{
     pub name: String
 }
+
+// implement the helloCommand
+impl HelloCommand{
+    pub fn say_hello(&self){
+        println!("Hello, {}!", self.name)
+    }
+}
